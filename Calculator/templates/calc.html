@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Calculator</title>
+    <style>
+      * {
+        margin: 5px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form method="POST" action="/">
+      {% csrf_token %}
+      <label for="value1"> Num1 </label><br />
+      <input
+        type="text"
+        name="num1"
+        placeholder="Enter First Number"
+        class="form-control"
+      /><br />
+      <label for="opr">Operator </label><br />
+      <select name="opr" placeholder="Enter Operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option></select
+      ><br />
+      <label for="value2"> Num2 </label><br />
+      <input
+        type="text"
+        name="num2"
+        placeholder="Enter Second Number"
+        class="form-control"
+      /><br />
+      <button type="submit">Calculate</button>
+      <br />
+      <label for="Output"> Output</label><br />
+      <input
+        type="text"
+        name="Output"
+        value="{{result}}"
+        class="form-control"
+      /><br />
+    </form>
+  </body>
+</html>
